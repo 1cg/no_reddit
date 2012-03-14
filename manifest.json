@@ -1,0 +1,18 @@
+{
+  "name": "No Reddit",
+  "version": "0.1",
+  "description": "Keep yourself productive",
+  "browser_action": {
+    "default_icon": "no_reddit.png"
+  },
+ "permissions": [
+    "tabs"
+  ],
+  "background_page": "background.html",
+  "content_scripts": [
+    {
+      "matches": ["http://www.reddit.com/*"],
+      "js": ["no_reddit.js"]
+    }
+  ]
+}

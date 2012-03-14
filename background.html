@@ -1,0 +1,18 @@
+<html>
+<head>
+<script>
+  // Called when the user clicks on the browser action.
+  chrome.browserAction.onClicked.addListener(function(tab) {
+		alert("Reddit's bad, m'kay?");
+  });
+
+	chrome.extension.onRequest.addListener(
+	  function(request, sender, sendResponse) {
+			chrome.tabs.getSelected(null, function(tab) {
+		    sendResponse(tab.id, {});
+				chrome.tabs.remove(tab.id);
+			});
+	  });
+</script>
+</head>
+</html>
